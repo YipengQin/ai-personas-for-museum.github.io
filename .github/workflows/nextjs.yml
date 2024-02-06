@@ -76,7 +76,7 @@ jobs:
       - name: Build with Next.js
         run: ${{ steps.detect-package-manager.outputs.runner }} next build
       - name: Copy out to dist
-        run: cp -r ./out ./dist
+        run: ls -al && cp -r ./out ./dist
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
