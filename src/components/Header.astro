@@ -1,7 +1,8 @@
 ---
 import NavTab from "./NavTab.astro";
 import { Content } from "../content/header.md";
-import cvaBgGradient from "../images/cva_1.svg";
+// import cvaBgGradient from "../images/cva_1.svg";
+import hero from "../images/hero.png"
 import AiukLogo from "../images/aiuk-logo-white-2048x1217-1.png";
 import { Image } from "astro:assets";
 
@@ -41,17 +42,17 @@ const tabs: {
         <Image src={AiukLogo} alt={"AIUK Logo"} class="h-20 w-36" />
         <span class="text-white font-bold text-3xl me-10"> Fringe 2024</span>
     </div>
-    <div class="bg-black flex justify-between">
+    <div class="relative bg-black flex justify-between">
         <div
-            class="min-h-full justify-center ps-20
+            class="absolute top-10 left-10 min-h-full justify-center ps-10
             flex flex-col
             prose
             prose-h1:text-7xl prose-h1:text-wrap prose-h1:text-white prose-h1:font-bold prose-h1:mb-10
-            prose-h2:text-4xl prose-h2:text-wrap prose-h2:text-white prose-h2:font-bold prose-h2:mt-0"
+            prose-h2:text-4lg prose-h2:text-wrap prose-h2:text-white prose-h2:font-bold prose-h2:mt-0"
         >
             <Content />
         </div>
-        <Image class="right-0 w-1/2" src={cvaBgGradient} alt={""} />
+        <Image src={hero} alt={""} />
     </div>
     <nav class="h-32 bg-gradient-to-b from-black to-primary">
         <ul class="flex justify-center items-center h-full">
