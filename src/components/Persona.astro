@@ -1,5 +1,16 @@
 ---
+import { Image } from "astro:assets";
+import avatarPlaceholder from "../images/avatar-placeholder.svg";
+
+interface Props {
+    name: string;
+    title: string;
+    from: string;
+    img: any;
+}
+const props: Props = Astro.props;
 ---
+
 <div>
-     
+    {props.img || <Image class="rouded" src={avatarPlaceholder} alt="avatar" />}
 </div>

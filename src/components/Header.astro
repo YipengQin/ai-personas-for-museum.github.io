@@ -1,10 +1,12 @@
 ---
 import NavTab from "./NavTab.astro";
 import { Content } from "../content/header.md";
-// import cvaBgGradient from "../images/cva_1.svg";
-import hero from "../images/hero.png"
+import hero from "../images/hero.png";
 import AiukLogo from "../images/aiuk-logo-white-2048x1217-1.png";
 import { Image } from "astro:assets";
+import cardiffLogo from "../images/cardiff.svg";
+import gw4Logo from "../images/gw4.svg";
+import ukriLogo from "../images/ukri-ahrc.svg";
 
 interface Props {
     activated_tab: string;
@@ -13,32 +15,37 @@ const props: Props = Astro.props;
 const tabs: {
     name: string;
     key: string;
+    href?: string;
 }[] = [
     {
         name: "Introduction",
-        key: "#intro",
+        key: "intro",
     },
     {
         name: "Agenda",
-        key: "#agenda",
+        key: "agenda",
     },
     {
         name: "Organisers",
-        key: "#organisers",
+        key: "organizers",
     },
     {
         name: "Register",
-        key: "#register",
+        key: "register",
+        href: "./#join"
     },
     {
         name: "Flyer",
-        key: "#flyer",
-    }
+        key: "flyer",
+        href:"./#join"
+    },
 ];
 ---
 
 <header>
-    <div class="p-3 flex justify-between items-center bg-gradient-to-br from-[#7D00FF] to-[#FF7D00]">
+    <div
+        class="p-3 flex justify-between items-center bg-gradient-to-br from-[#7D00FF] to-[#FF7D00]"
+    >
         <Image src={AiukLogo} alt={"AIUK Logo"} class="h-20 w-36" />
         <span class="text-white font-bold text-3xl me-10"> Fringe 2024</span>
     </div>
@@ -54,16 +61,27 @@ const tabs: {
         </div>
         <Image src={hero} alt={""} />
     </div>
-    <nav class="h-32 bg-gradient-to-b from-black to-primary">
+    <div class="flex bg-black justify-around pt-3">
+        <Image
+            src={cardiffLogo}
+            alt={"Cardiff University Logo"}
+            class="h-20 w-20"
+        />
+        <Image src={gw4Logo} alt={"GW4 Logo"} class="h-20 w-36" />
+        <Image src={ukriLogo} alt={"UKRI Logo"} class="h-20 w-72" />
+    </div>
+    <nav class="h-20 bg-gradient-to-b from-black to-primary">
         <ul class="flex justify-center items-center h-full">
             {
                 tabs.map((tabProps) => (
-                    <NavTab
-                        name={tabProps.name}
-                        key={tabProps.key}
-                        href={`/${tabProps.key}`}
-                        activated={props.activated_tab === tabProps.key}
-                    />
+                    <div class="flex w-32 justify-center">
+                        <NavTab
+                            name={tabProps.name}
+                            key={tabProps.key}
+                            href={tabProps.href || `./#${tabProps.key}`}
+                            activated={props.activated_tab === tabProps.key}
+                        />
+                    </div>
                 ))
             }
         </ul>
