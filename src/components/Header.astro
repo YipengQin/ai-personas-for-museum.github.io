@@ -2,11 +2,7 @@
 import NavTab from "./NavTab.astro";
 import { Content } from "../content/header.md";
 import hero from "../images/hero.png";
-import AiukLogo from "../images/aiuk-logo-white-2048x1217-1.png";
 import { Image } from "astro:assets";
-import cardiffLogo from "../images/cardiff.svg";
-import gw4Logo from "../images/gw4.svg";
-import ukriLogo from "../images/ukri-ahrc.svg";
 
 interface Props {
     activated_tab: string;
@@ -32,45 +28,51 @@ const tabs: {
     {
         name: "Register",
         key: "register",
-        href: "./#join"
+        href: "./#join",
     },
     {
         name: "Flyer",
         key: "flyer",
-        href:"./#join"
+        href: "./#join",
     },
 ];
 ---
 
-<header>
-    <div
+<header class="w-2/3 mt-10">
+    <!-- <div
         class="p-3 flex justify-between items-center bg-gradient-to-br from-[#7D00FF] to-[#FF7D00]"
     >
         <Image src={AiukLogo} alt={"AIUK Logo"} class="h-20 w-36" />
         <span class="text-white font-bold text-3xl me-10"> Fringe 2024</span>
-    </div>
+    </div> -->
     <div class="relative bg-black flex justify-between">
         <div
-            class="absolute top-10 left-10 min-h-full justify-center ps-10
+            class="absolute top-0 left-10 min-h-full justify-begin pt-10 ps-10 flex-grow
             flex flex-col
             prose
             prose-h1:text-7xl prose-h1:text-wrap prose-h1:text-white prose-h1:font-bold prose-h1:mb-10
-            prose-h2:text-4lg prose-h2:text-wrap prose-h2:text-white prose-h2:font-bold prose-h2:mt-0"
+            prose-h2:text-4lg prose-h2:text-wrap prose-h2:text-white prose-h2:font-bold prose-h2:mt-0 prose-h2:min-w-96"
         >
             <Content />
+            
+        </div>
+        <div class="absolute text-white right-10 bottom-28 font-bold text-2xl">
+            <p>March 27th, 2024, 10:00 - 12:00 (Tentative), Online</p>
         </div>
         <Image src={hero} alt={""} />
     </div>
-    <div class="flex bg-black justify-around pt-3">
-        <Image
-            src={cardiffLogo}
-            alt={"Cardiff University Logo"}
-            class="h-20 w-20"
-        />
-        <Image src={gw4Logo} alt={"GW4 Logo"} class="h-20 w-36" />
-        <Image src={ukriLogo} alt={"UKRI Logo"} class="h-20 w-72" />
-    </div>
-    <nav class="h-20 bg-gradient-to-b from-black to-primary">
+    <!-- <div class="flex bg-black justify-center w-full pt-3">
+        <div class="flex justify-center w-1/2">
+            <Image
+                src={cardiffLogo}
+                alt={"Cardiff University Logo"}
+                class="h-20 w-20"
+            />
+            <Image src={gw4Logo} alt={"GW4 Logo"} class="h-20 w-36" />
+            <Image src={ukriLogo} alt={"UKRI Logo"} class="h-20 w-72" />
+        </div>
+    </div> -->
+    <nav class="h-20 bg-secondary">
         <ul class="flex justify-center items-center h-full">
             {
                 tabs.map((tabProps) => (

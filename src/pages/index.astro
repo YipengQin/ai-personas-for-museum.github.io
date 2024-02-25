@@ -4,188 +4,167 @@ import Layout from "../layouts/Layout.astro";
 import { Content as Intro } from "../content/home/intro.md";
 import { Content as JoinUs } from "../content/home/joinus.md";
 import { Content as WeHope } from "../content/home/wehope.md";
+import { Image } from "astro:assets";
+import avatarPlaceHolder from "../images/avatar-placeholder.svg";
+import formPreview from "../images/form-preview.png";
+import canvasPreview from "../images/canvas-preview.png";
 const organizers: { name: string; from: string }[] = [
     { name: "Dr. Yipeng Qin", from: "Cardiff" },
-    { name: "Dr. Barbara Caddick", from: "Bristol" },
-    { name: "Dr. Deborah Brewis", from: "Bath" },
-    { name: "Dr. Peidong Mei", from: "Exeter" },
+];
+const demostrators: { name: string; from: string }[] = [
+    { name: "Zhuoling Jiang", from: "Cardiff" },
+];
+const support: { name: string; from: string }[] = [
+    { name: "Dr. Mouhamad Aboshokor", from: "Cardiff" },
+    { name: "Dr. Yipeng Qin", from: "Cardiff" },
 ];
 ---
 
 <Layout title="Welcome to Astro.">
-    <Header activated_tab="home" />
-    <main id="intro" class="bg-primary px-36 flex flex-col justify-center items-center">
-        <article class="flex flex-col justify-center w-2/3">
-            <section
-                class="prose prose-p:my-5 text-white text-lg min-w-full px-3"
-            >
-                <Intro />
-            </section>
+    <div class="flex flex-col bg-primary justify-center items-center">
+        <Header activated_tab="home" />
 
-            <section
-                class="prose prose-p:my-5 text-white text-lg min-w-full px-3"
-            >
-                <JoinUs />
-            </section>
-            <section
-                class="prose prose-p:my-5 text-white text-lg min-w-full px-3"
-            >
-                <WeHope />
-            </section>
-        </article>
-        <article id="agenda" class="my-10 text-white w-2/3">
-            <h1 class="text-3xl font-bold my-5 mb-10">Agenda</h1>
-            <ul class="timeline timeline-vertical">
-                <li>
-                    <div
-                        class="timeline-start timeline-box bg-primary border-2"
-                    >
-                        To be added...
-                    </div>
-                    <div class="timeline-middle">
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            viewBox="0 0 20 20"
-                            fill="currentColor"
-                            class="w-5 h-5 text-white"
-                            ><path
-                                fill-rule="evenodd"
-                                d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
-                                clip-rule="evenodd"></path></svg
-                        >
-                    </div>
-                    <hr class="bg-white" />
-                </li>
-                <li>
-                    <hr class="bg-white" />
-                    <div class="timeline-middle">
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            viewBox="0 0 20 20"
-                            fill="currentColor"
-                            class="w-5 h-5 text-white"
-                            ><path
-                                fill-rule="evenodd"
-                                d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
-                                clip-rule="evenodd"></path></svg
-                        >
-                    </div>
-                    <div class="timeline-end timeline-box bg-primary border-2">
-                        To be added...
-                    </div>
-                    <hr class="bg-white" />
-                </li>
-                <li>
-                    <hr class="bg-white" />
-                    <div
-                        class="timeline-start timeline-box bg-primary border-2"
-                    >
-                        To be added...
-                    </div>
-                    <div class="timeline-middle">
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            viewBox="0 0 20 20"
-                            fill="currentColor"
-                            class="w-5 h-5 text-white"
-                            ><path
-                                fill-rule="evenodd"
-                                d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
-                                clip-rule="evenodd"></path></svg
-                        >
-                    </div>
-                    <hr />
-                </li>
-                <li>
-                    <hr />
-                    <div class="timeline-middle">
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            viewBox="0 0 20 20"
-                            fill="currentColor"
-                            class="w-5 h-5"
-                            ><path
-                                fill-rule="evenodd"
-                                d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
-                                clip-rule="evenodd"></path></svg
-                        >
-                    </div>
-                    <div class="timeline-end timeline-box bg-primary border-2">
-                        To be added...
-                    </div>
-                    <hr />
-                </li>
-                <li>
-                    <hr />
-                    <div
-                        class="timeline-start timeline-box bg-primary border-2"
-                    >
-                        To be added...
-                    </div>
-                    <div class="timeline-middle">
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            viewBox="0 0 20 20"
-                            fill="currentColor"
-                            class="w-5 h-5"
-                            ><path
-                                fill-rule="evenodd"
-                                d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
-                                clip-rule="evenodd"></path></svg
-                        >
-                    </div>
-                </li>
-            </ul>
-        </article>
+        <hr class="border border-white border-solid border-1 w-2/3" />
+        <main
+            id="intro"
+            class="bg-secondary flex flex-col justify-center items-center w-2/3 p-5"
+        >
+            <article class="flex flex-col justify-center w-full px-20">
+                <h1 class="text-3xl font-bold my-5 mb-10 text-white">
+                    Introduction
+                </h1>
+                <section
+                    class="prose prose-p:my-5 text-white text-lg min-w-full px-3"
+                >
+                    <Intro />
+                </section>
 
-        <article id="organizers" class="my-10 text-white w-2/3">
-            <h1 class="text-3xl font-bold my-5 mb-10">Organizers</h1>
-            <ul class="flex gap-5 justify-center">
-                {
-                    organizers.map((organizer) => (
-                        <li class="card shadow-lg w-72 bg-secondary">
-                            <div class="card-body">
-                                <h2 class="card-title">{organizer.name}</h2>
-                                <p class="text-lg">{organizer.from}</p>
-                            </div>
-                        </li>
-                    ))
-                }
-            </ul>
-        </article>
-        <article id="join" class="text-white w-2/3">
-            <h1 class="text-3xl font-bold my-5 mb-10">Join</h1>
-            <div class="flex gap-3 justify-center">
-                <div class="card bg-secondary w-1/2">
-                    <div class="card-body">
-                        <h1 class="card-title">
-                            To join our event, please fill in the form below.
-                        </h1>
-                        <a
-                            class="underline hover:font-bold cursor-pointer"
-                            href="https://forms.office.com/Pages/ResponsePage.aspx?id=MEu3vWiVVki9vwZ1l3j8vP-Uj8nS6OdHvy7ftDnon0xURTNOUklLMjY2N1lBREFIUzhMUzBVOVZKUC4u"
-                        >
-                            Register
-                        </a>
-                    </div>
-                </div>
-                <div class="card bg-secondary w-1/2">
-                    <div class="card-body">
-                        <h1 class="card-title">Flyer</h1>
-                        <a
-                            class="underline hover:font-bold cursor-pointer"
-                            href="https://www.canva.com/design/DAF83v7vzvE/C-RvbCZOaMvnlLmnGTIl9g/view"
-                        >
-                            See our Flyer on Canvas
-                        </a>
-                    </div>
-                </div>
+                <section
+                    class="prose prose-p:my-5 text-white text-lg min-w-full px-3"
+                >
+                    <JoinUs />
+                </section>
+                <section
+                    class="prose prose-p:my-5 text-white text-lg min-w-full px-3"
+                >
+                    <WeHope />
+                </section>
+            </article>
+            <article id="agenda" class="my-10 text-white w-full ps-20">
+                <h1 class="text-3xl font-bold my-5 mb-10">Agenda</h1>
+                <p>TBD</p>
+            </article>
+            <div
+                id="organizers"
+                class="text-white flex gap-5 w-full justify-center"
+            >
+                <article>
+                    <h1 class="text-3xl font-bold my-5 mb-10">Organizers</h1>
+                    <ul class="flex flex-col gap-5 justify-center">
+                        {
+                            organizers.map((organizer) => (
+                                <li class="card shadow-lg w-52 bg-primary">
+                                    <Image
+                                        class="round"
+                                        src={avatarPlaceHolder}
+                                        alt={organizer.name}
+                                    />
+                                    <div class="card-body">
+                                        <h2 class="card-title">
+                                            {organizer.name}
+                                        </h2>
+                                        <p class="text-lg">{organizer.from}</p>
+                                    </div>
+                                </li>
+                            ))
+                        }
+                    </ul>
+                </article>
+                <article>
+                    <h1 class="text-3xl font-bold my-5 mb-10">Demostrator</h1>
+                    <ul class="flex flex-col gap-5 justify-center">
+                        {
+                            demostrators.map((organizer) => (
+                                <li class="card shadow-lg w-52 bg-primary">
+                                    <Image
+                                        class="round"
+                                        src={avatarPlaceHolder}
+                                        alt={organizer.name}
+                                    />
+                                    <div class="card-body">
+                                        <h2 class="card-title">
+                                            {organizer.name}
+                                        </h2>
+                                        <p class="text-lg">{organizer.from}</p>
+                                    </div>
+                                </li>
+                            ))
+                        }
+                    </ul>
+                </article>
+                <article>
+                    <h1 class="text-3xl font-bold my-5 mb-10">
+                        Univeristy Support
+                    </h1>
+                    <ul class="flex flex-row gap-5 justify-center">
+                        {
+                            support.map((organizer) => (
+                                <li class="card shadow-lg w-52 bg-primary">
+                                    <Image
+                                        class="round"
+                                        src={avatarPlaceHolder}
+                                        alt={organizer.name}
+                                    />
+                                    <div class="card-body">
+                                        <h2 class="card-title">
+                                            {organizer.name}
+                                        </h2>
+                                        <p class="text-lg">{organizer.from}</p>
+                                    </div>
+                                </li>
+                            ))
+                        }
+                    </ul>
+                </article>
             </div>
-        </article>
+            <article id="join" class="text-white w-full px-20">
+                <h1 class="text-3xl font-bold my-5 mb-10">Join</h1>
+                <div class="flex gap-3 justify-center">
+                    <div class="card bg-primary shadow-lg w-1/2">
+                        <Image src={formPreview} alt="Form Preview" />
+                        
+                        <div class="card-body">
+                            <h1 class="card-title">
+                                To join our event, please fill in the form
+                                below.
+                            </h1>
+                            <a
+                                class="underline hover:font-bold cursor-pointer"
+                                href="https://forms.office.com/Pages/ResponsePage.aspx?id=MEu3vWiVVki9vwZ1l3j8vP-Uj8nS6OdHvy7ftDnon0xURTNOUklLMjY2N1lBREFIUzhMUzBVOVZKUC4u"
+                            >
+                                Register
+                            </a>
+                        </div>
+                    </div>
+                    <div class="card bg-primary shadow-lg w-1/2">
+                        <Image src={canvasPreview} alt="Canvas Preview" />
+                        <div class="card-body">
+                            <h1 class="card-title">Flyer</h1>
+                            <a
+                                class="underline hover:font-bold cursor-pointer"
+                                href="https://www.canva.com/design/DAF83v7vzvE/C-RvbCZOaMvnlLmnGTIl9g/view"
+                            >
+                                See our Flyer on Canvas
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </main>
         <footer
-            class="border-white border-solid border-3 border-t mt-10 bg-primary text-white text-center py-5 w-full"
+            class="border-t border-white pt-10 bg-secondary text-white text-center py-5 w-2/3"
         >
             <p>&copy; 2024</p>
         </footer>
-    </main>
+    </div>
 </Layout>
