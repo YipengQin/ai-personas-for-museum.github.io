@@ -28,23 +28,17 @@ const tabs: {
     {
         name: "Register",
         key: "register",
-        href: "./#join",
+        href: "https://forms.office.com/Pages/ResponsePage.aspx?id=MEu3vWiVVki9vwZ1l3j8vP-Uj8nS6OdHvy7ftDnon0xURTNOUklLMjY2N1lBREFIUzhMUzBVOVZKUC4u",
     },
     {
         name: "Flyer",
         key: "flyer",
-        href: "./#join",
+        href: "https://www.canva.com/design/DAF83v7vzvE/C-RvbCZOaMvnlLmnGTIl9g/view",
     },
 ];
 ---
 
-<header class="w-2/3 mt-10">
-    <!-- <div
-        class="p-3 flex justify-between items-center bg-gradient-to-br from-[#7D00FF] to-[#FF7D00]"
-    >
-        <Image src={AiukLogo} alt={"AIUK Logo"} class="h-20 w-36" />
-        <span class="text-white font-bold text-3xl me-10"> Fringe 2024</span>
-    </div> -->
+<header class="w-full mt-10">
     <div class="relative bg-black flex justify-between">
         <div
             class="absolute top-0 left-10 min-h-full justify-begin pt-10 ps-10 flex-grow
@@ -54,29 +48,17 @@ const tabs: {
             prose-h2:text-4lg prose-h2:text-wrap prose-h2:text-white prose-h2:font-bold prose-h2:mt-0 prose-h2:min-w-96"
         >
             <Content />
-            
         </div>
         <div class="absolute text-white right-10 bottom-28 font-bold text-2xl">
             <p>March 27th, 2024, 10:00 - 12:00 (Tentative), Online</p>
         </div>
         <Image src={hero} alt={""} />
     </div>
-    <!-- <div class="flex bg-black justify-center w-full pt-3">
-        <div class="flex justify-center w-1/2">
-            <Image
-                src={cardiffLogo}
-                alt={"Cardiff University Logo"}
-                class="h-20 w-20"
-            />
-            <Image src={gw4Logo} alt={"GW4 Logo"} class="h-20 w-36" />
-            <Image src={ukriLogo} alt={"UKRI Logo"} class="h-20 w-72" />
-        </div>
-    </div> -->
     <nav class="h-20 bg-secondary">
-        <ul class="flex justify-center items-center h-full">
+        <ul class="flex justify-center gap-5 items-center h-full">
             {
                 tabs.map((tabProps) => (
-                    <div class="flex w-32 justify-center">
+                    <div class="flex justify-center">
                         <NavTab
                             name={tabProps.name}
                             key={tabProps.key}

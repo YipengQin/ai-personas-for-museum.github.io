@@ -1,0 +1,30 @@
+---
+import Persona from "./Persona.astro";
+interface Props {
+    title: string;
+    personas: {
+        name: string;
+        from: string;
+        img?: any;
+    }[];
+}
+
+const props = Astro.props;
+---
+
+<article>
+    <h1 class="text-3xl font-bold my-5 mb-10">{props.title}</h1>
+    <ul class="flex flex-row gap-5 justify-center">
+        {
+            props.personas.map((persona) => {
+                return (
+                    <Persona
+                        name={persona.name}
+                        from={persona.from}
+                        img={persona.img}
+                    />
+                );
+            })
+        }
+    </ul>
+</article>

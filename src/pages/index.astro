@@ -1,11 +1,11 @@
 ---
 import Header from "../components/Header.astro";
 import Layout from "../layouts/Layout.astro";
+import PersonasGroup from "../components/PersonasGroup.astro";
 import { Content as Intro } from "../content/home/intro.md";
 import { Content as JoinUs } from "../content/home/joinus.md";
 import { Content as WeHope } from "../content/home/wehope.md";
 import { Image } from "astro:assets";
-import avatarPlaceHolder from "../images/avatar-placeholder.svg";
 import formPreview from "../images/form-preview.png";
 import canvasPreview from "../images/canvas-preview.png";
 const organizers: { name: string; from: string }[] = [
@@ -16,155 +16,137 @@ const demostrators: { name: string; from: string }[] = [
 ];
 const support: { name: string; from: string }[] = [
     { name: "Dr. Mouhamad Aboshokor", from: "Cardiff" },
-    { name: "Dr. Yipeng Qin", from: "Cardiff" },
+    { name: "Niki Price", from: "Cardiff" },
 ];
 ---
 
 <Layout title="Welcome to Astro.">
     <div class="flex flex-col bg-primary justify-center items-center">
-        <Header activated_tab="home" />
+        <div class="w-5/6">
+            <Header activated_tab="home" />
 
-        <hr class="border border-white border-solid border-1 w-2/3" />
-        <main
-            id="intro"
-            class="bg-secondary flex flex-col justify-center items-center w-2/3 p-5"
-        >
-            <article class="flex flex-col justify-center w-full px-20">
-                <h1 class="text-3xl font-bold my-5 mb-10 text-white">
-                    Introduction
-                </h1>
-                <section
-                    class="prose prose-p:my-5 text-white text-lg min-w-full px-3"
-                >
-                    <Intro />
-                </section>
-
-                <section
-                    class="prose prose-p:my-5 text-white text-lg min-w-full px-3"
-                >
-                    <JoinUs />
-                </section>
-                <section
-                    class="prose prose-p:my-5 text-white text-lg min-w-full px-3"
-                >
-                    <WeHope />
-                </section>
-            </article>
-            <article id="agenda" class="my-10 text-white w-full ps-20">
-                <h1 class="text-3xl font-bold my-5 mb-10">Agenda</h1>
-                <p>TBD</p>
-            </article>
-            <div
-                id="organizers"
-                class="text-white flex gap-5 w-full justify-center"
+            <hr class="border border-white border-solid border-1 w-full" />
+            <main
+                id="intro"
+                class="bg-secondary flex flex-col justify-center items-center w-full p-5"
             >
-                <article>
-                    <h1 class="text-3xl font-bold my-5 mb-10">Organizers</h1>
-                    <ul class="flex flex-col gap-5 justify-center">
-                        {
-                            organizers.map((organizer) => (
-                                <li class="card shadow-lg w-52 bg-primary">
-                                    <Image
-                                        class="round"
-                                        src={avatarPlaceHolder}
-                                        alt={organizer.name}
-                                    />
-                                    <div class="card-body">
-                                        <h2 class="card-title">
-                                            {organizer.name}
-                                        </h2>
-                                        <p class="text-lg">{organizer.from}</p>
-                                    </div>
-                                </li>
-                            ))
-                        }
-                    </ul>
-                </article>
-                <article>
-                    <h1 class="text-3xl font-bold my-5 mb-10">Demostrator</h1>
-                    <ul class="flex flex-col gap-5 justify-center">
-                        {
-                            demostrators.map((organizer) => (
-                                <li class="card shadow-lg w-52 bg-primary">
-                                    <Image
-                                        class="round"
-                                        src={avatarPlaceHolder}
-                                        alt={organizer.name}
-                                    />
-                                    <div class="card-body">
-                                        <h2 class="card-title">
-                                            {organizer.name}
-                                        </h2>
-                                        <p class="text-lg">{organizer.from}</p>
-                                    </div>
-                                </li>
-                            ))
-                        }
-                    </ul>
-                </article>
-                <article>
-                    <h1 class="text-3xl font-bold my-5 mb-10">
-                        Univeristy Support
+                <article class="flex flex-col justify-center w-full px-20">
+                    <h1 class="text-3xl font-bold my-5 mb-10 text-white">
+                        Introduction
                     </h1>
-                    <ul class="flex flex-row gap-5 justify-center">
-                        {
-                            support.map((organizer) => (
-                                <li class="card shadow-lg w-52 bg-primary">
-                                    <Image
-                                        class="round"
-                                        src={avatarPlaceHolder}
-                                        alt={organizer.name}
-                                    />
-                                    <div class="card-body">
-                                        <h2 class="card-title">
-                                            {organizer.name}
-                                        </h2>
-                                        <p class="text-lg">{organizer.from}</p>
-                                    </div>
-                                </li>
-                            ))
-                        }
-                    </ul>
+                    <section
+                        class="prose prose-p:my-5 text-white text-lg min-w-full px-3"
+                    >
+                        <Intro />
+                    </section>
+
+                    <section
+                        class="prose prose-p:my-5 text-white text-lg min-w-full px-3"
+                    >
+                        <JoinUs />
+                    </section>
+                    <section
+                        class="prose prose-p:my-5 text-white text-lg min-w-full px-3"
+                    >
+                        <WeHope />
+                    </section>
                 </article>
-            </div>
-            <article id="join" class="text-white w-full px-20">
-                <h1 class="text-3xl font-bold my-5 mb-10">Join</h1>
-                <div class="flex gap-3 justify-center">
-                    <div class="card bg-primary shadow-lg w-1/2">
-                        <Image src={formPreview} alt="Form Preview" />
-                        
-                        <div class="card-body">
-                            <h1 class="card-title">
-                                To join our event, please fill in the form
-                                below.
-                            </h1>
-                            <a
-                                class="underline hover:font-bold cursor-pointer"
-                                href="https://forms.office.com/Pages/ResponsePage.aspx?id=MEu3vWiVVki9vwZ1l3j8vP-Uj8nS6OdHvy7ftDnon0xURTNOUklLMjY2N1lBREFIUzhMUzBVOVZKUC4u"
-                            >
-                                Register
-                            </a>
-                        </div>
-                    </div>
-                    <div class="card bg-primary shadow-lg w-1/2">
-                        <Image src={canvasPreview} alt="Canvas Preview" />
-                        <div class="card-body">
-                            <h1 class="card-title">Flyer</h1>
-                            <a
-                                class="underline hover:font-bold cursor-pointer"
-                                href="https://www.canva.com/design/DAF83v7vzvE/C-RvbCZOaMvnlLmnGTIl9g/view"
-                            >
-                                See our Flyer on Canvas
-                            </a>
-                        </div>
-                    </div>
+                <article id="agenda" class="my-10 text-white w-full ps-20">
+                    <h1 class="text-3xl font-bold my-5 mb-10">Agenda (Tentative)</h1>
+                    <table class="w-full text-center text-xl ">
+                        <thead>
+                            <tr>
+                                <th class="border border-white border-solid">Time</th>
+                                <th class="border border-white border-solid w-3/5">Event</th>
+                                <th class="border border-white border-solid">Speaker</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr >
+                                <td class="border border-white border-solid">10:00 - 10:30</td>
+                                <td class="border border-white border-solid">Opening Speech</td>
+                                <td class="border border-white border-solid">Dr. Yipeng Qin</td>
+                            </tr>
+                            <tr>
+                                <td class="border border-white border-solid">10:30 - 11:00</td>
+                                <td class="border border-white border-solid">Prototype Demostration</td>
+                                <td class="border border-white border-solid">Zhuoling Jiang</td>
+                            </tr>
+                            <tr>
+                                <td class="border border-white border-solid">11:00 - 11:30</td>
+                                <td class="border border-white border-solid">(Topic TBD)</td>
+                                <td class="border border-white border-solid">Dr. Barbara Caddick</td>
+                            </tr>
+                            <tr>
+                                <td class="border border-white border-solid">11:30 - 12:00</td>
+                                <td class="border border-white border-solid">(Topic TBD)</td>
+                                <td class="border border-white border-solid">Dr. Deborah Brewis</td>
+                            </tr>
+                            <tr>
+                                <td class="border border-white border-solid">12:00 - 12:30</td>
+                                <td class="border border-white border-solid">Lunch Break</td>
+                                <td class="border border-white border-solid">-</td>
+                            </tr>
+                            <tr>
+                                <td class="border border-white border-solid">12:30 - 13:00</td>
+                                <td class="border border-white border-solid">(Topic TBD)</td>
+                                <td class="border border-white border-solid">Dr. Peidong Mei</td>
+                        </tbody>
+                    </table>
+                </article>
+                <div
+                    id="organizers"
+                    class="text-white flex gap-5 justify-around w-full px-20"
+                >
+                    <PersonasGroup title="Organizers" personas={organizers} />
+                    <PersonasGroup
+                        title="Demostrators"
+                        personas={demostrators}
+                    />
+                    <PersonasGroup
+                        title="University Support"
+                        personas={support}
+                    />
                 </div>
-            </article>
-        </main>
-        <footer
-            class="border-t border-white pt-10 bg-secondary text-white text-center py-5 w-2/3"
-        >
-            <p>&copy; 2024</p>
-        </footer>
+                <article id="join" class="text-white w-full px-20">
+                    <h1 class="text-3xl font-bold my-5 mb-10">Join</h1>
+                    <div class="flex gap-3 justify-center">
+                        <div class="card bg-primary shadow-lg w-1/2">
+                            <Image src={formPreview} alt="Form Preview" />
+
+                            <div class="card-body">
+                                <h1 class="card-title">
+                                    To join our event, please fill in the form
+                                    below.
+                                </h1>
+                                <a
+                                    class="underline hover:font-bold cursor-pointer"
+                                    href="https://forms.office.com/Pages/ResponsePage.aspx?id=MEu3vWiVVki9vwZ1l3j8vP-Uj8nS6OdHvy7ftDnon0xURTNOUklLMjY2N1lBREFIUzhMUzBVOVZKUC4u"
+                                >
+                                    Register
+                                </a>
+                            </div>
+                        </div>
+                        <div class="card bg-primary shadow-lg w-1/2">
+                            <Image src={canvasPreview} alt="Canvas Preview" />
+                            <div class="card-body">
+                                <h1 class="card-title">Flyer</h1>
+                                <a
+                                    class="underline hover:font-bold cursor-pointer"
+                                    href="https://www.canva.com/design/DAF83v7vzvE/C-RvbCZOaMvnlLmnGTIl9g/view"
+                                >
+                                    See our Flyer on Canvas
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </main>
+            <footer
+                class="border-t border-white pt-10 bg-secondary text-white text-center py-5 w-full"
+            >
+                <p>&copy; Event Organizers 2024</p>
+            </footer>
+        </div>
     </div>
 </Layout>

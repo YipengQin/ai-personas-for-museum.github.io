@@ -4,13 +4,22 @@ import avatarPlaceholder from "../images/avatar-placeholder.svg";
 
 interface Props {
     name: string;
-    title: string;
     from: string;
-    img: any;
+    img?: any;
 }
 const props: Props = Astro.props;
 ---
 
-<div>
-    {props.img || <Image class="rouded" src={avatarPlaceholder} alt="avatar" />}
-</div>
+<li class="card shadow-lg w-52 bg-primary">
+    <Image
+        class="round"
+        src={props.img || avatarPlaceholder}
+        alt={props.name}
+    />
+    <div class="card-body">
+        <h2 class="card-title">
+            {props.name}
+        </h2>
+        <p class="text-lg">{props.from}</p>
+    </div>
+</li>
