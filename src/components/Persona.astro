@@ -12,9 +12,12 @@ const props: Props = Astro.props;
 
 <li class="card shadow-lg w-52 bg-primary">
     <Image
-        class="round"
+        class=" rounded-lg"
         src={props.img || avatarPlaceholder}
         alt={props.name}
+        width={208}
+        height={208}
+        style={{ objectFit: "cover", height: "13rem", width: "13rem"}}
     />
     <div class="card-body">
         <h2 class="card-title">
