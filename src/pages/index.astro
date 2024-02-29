@@ -13,14 +13,14 @@ interface Persona {
     from: string;
     img?: string;
 }
-const organizers: Persona[] = [
+const organisers: Persona[] = [
     {
         name: "Dr. Yipeng Qin",
         from: "Cardiff",
         img: "https://yipengqin.github.io/assets/img/profile.jpg",
     },
 ];
-const demostrators: Persona[] = [
+const demonstrators: Persona[] = [
     {
         name: "Zhuoling Jiang",
         from: "Cardiff",
@@ -41,7 +41,7 @@ const support: Persona[] = [
 ];
 ---
 
-<Layout title="Welcome to Astro.">
+<Layout title="Past Meets Future">
     <div class="flex flex-col bg-primary justify-center items-center">
         <div class="w-7/12">
             <Header activated_tab="home" />
@@ -161,16 +161,16 @@ const support: Persona[] = [
                         </tbody>
                     </table>
                     <div
-                        id="organizers"
+                        id="organisers"
                         class="text-white flex gap-3 justify-around w-full mt-5"
                     >
                         <PersonasGroup
-                            title="Organizers"
-                            personas={organizers}
+                            title="Organisers"
+                            personas={organisers}
                         />
                         <PersonasGroup
-                            title="Demostrators"
-                            personas={demostrators}
+                            title="Demonstrators"
+                            personas={demonstrators}
                         />
                         <PersonasGroup
                             title="University Support"
@@ -234,7 +234,7 @@ const support: Persona[] = [
                 <footer
                     class="border-t border-white pt-10 bg-secondary text-white text-center py-5 w-full"
                 >
-                    <p>&copy; Event Organizers 2024</p>
+                    <p>&copy; Event organisers 2024</p>
                 </footer>
             </main>
         </div>
