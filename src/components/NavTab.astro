@@ -4,18 +4,32 @@ interface Props {
     key: string;
     activated: boolean;
     href: string;
+    newTab?: boolean;
 }
 const props: Props = Astro.props;
 ---
 
 <li>
-    <a
-        target="_blank"
-        href={props.href}
-        class={`text-white text-center text-2xl font-bold ${
-            props.activated ? "border-b-2 border-white" : ""
-        } hover:border-b-2`}
-    >
-        {props.name}
-    </a>
+    {
+        props.newTab ? (
+            <a
+                target="_blank"
+                href={props.href}
+                class={`text-white text-center text-2xl font-bold ${
+                    props.activated ? "border-b-2 border-white" : ""
+                } hover:border-b-2`}
+            >
+                {props.name}
+            </a>
+        ) : (
+            <a
+                href={props.href}
+                class={`text-white text-center text-2xl font-bold ${
+                    props.activated ? "border-b-2 border-white" : ""
+                } hover:border-b-2`}
+            >
+                {props.name}
+            </a>
+        )
+    }
 </li>

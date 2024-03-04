@@ -64,6 +64,7 @@ const tabs: {
                             key={tabProps.key}
                             href={tabProps.href || `./#${tabProps.key}`}
                             activated={props.activated_tab === tabProps.key}
+                            newTab={tabProps.href !== undefined}
                         />
                     </div>
                 ))
