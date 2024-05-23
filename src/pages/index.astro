@@ -6,6 +6,9 @@ import { Content as Intro } from "../content/home/intro.md";
 import { Content as JoinUs } from "../content/home/joinus.md";
 import { Content as WeHope } from "../content/home/wehope.md";
 import { Image } from "astro:assets";
+import mouhamad from "../images/mouhamad.jpg";
+import zhuoling from "../images/zhuoling.webp";
+import niki from "../images/niki.jpg";
 import formPreview from "../images/form-preview.png";
 import canvasPreview from "../images/canvas-preview.png";
 interface Persona {
@@ -24,19 +27,19 @@ const demonstrators: Persona[] = [
     {
         name: "Zhuoling Jiang",
         from: "Cardiff",
-        img: "https://zhuoling.space/_astro/profile_Z12ICe4.webp",
+        img: zhuoling,
     },
 ];
 const support: Persona[] = [
     {
         name: "Mouhamad Aboshokor",
         from: "Cardiff",
-        img: "https://media.licdn.com/dms/image/D4E03AQFttBYNDhMlRw/profile-displayphoto-shrink_200_200/0/1673284118840?e=1714608000&v=beta&t=NCM0m4Nx2vtAwcLyn3vhGjJkxBpeBNoYvbicHQKBmHE",
+        img: mouhamad,
     },
     {
         name: "Niki Price",
         from: "Cardiff",
-        img: "https://media.licdn.com/dms/image/D4E03AQFrnruNix877g/profile-displayphoto-shrink_200_200/0/1688233165880?e=1714608000&v=beta&t=FYjUN1C-oy1_avOcn_URnbnfW8DDweHCO3aF7uqWKZY",
+        img: niki,
     },
 ];
 ---
